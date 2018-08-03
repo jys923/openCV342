@@ -78,7 +78,7 @@ int histogram03(String filePath)
 	moveWindow("HistogramR", 130, 130);
 
 	imshow("Original", inputImg);
-	imshow("HistogramB", histImageB);
+	imshow("HistogramB", histImageB);//
 	imshow("HistogramG", histImageG);
 	imshow("HistogramR", histImageR);
 
