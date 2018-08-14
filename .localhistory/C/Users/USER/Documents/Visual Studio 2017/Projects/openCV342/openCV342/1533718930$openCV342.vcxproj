@@ -125,19 +125,13 @@
     <ClCompile Include="03Wavelet1.cpp" />
     <ClCompile Include="03Wavelet2.cpp" />
     <ClCompile Include="03Wavelet3.c" />
-    <ClCompile Include="03Wavelet4.cpp" />
     <ClCompile Include="09Histogram03.cpp" />
-    <ClCompile Include="04HighPassFilter.cpp" />
-    <ClCompile Include="05LowPassFilter.cpp" />
-    <ClCompile Include="06myFilter2D.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="03Wavelet1.h" />
     <ClInclude Include="03Wavelet2.h" />
     <ClInclude Include="03Wavelet3.h" />
-    <ClInclude Include="04HighPassFilter.h" />
-    <ClInclude Include="05LowPassFilter.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

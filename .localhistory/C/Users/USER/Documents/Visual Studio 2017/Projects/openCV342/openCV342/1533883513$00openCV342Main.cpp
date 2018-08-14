@@ -8,29 +8,24 @@ int polarTransforms(int camNumber);
 int histogram03(String filePath);
 int logPolarTest(String filePath);
 int process(VideoCapture& capture);
-void myFilter2D(const cv::Mat &image, cv::Mat &result , int filter);
-int myFilter2DMain();
+void sharpen2D(const cv::Mat &image, cv::Mat &result);
 
 int main()
 {
-	int resultMain = 0;
+	Mat image = cv::imread("./../../[00Images]/etc/lena.png", IMREAD_GRAYSCALE);
+	Mat result;
 
-	//시프트 연산
-	int a = 6;
-	cout << "shift>>:" << (a >> 1) << endl;//03
-	cout << "shift<<:" << (a << 1) << endl;//12
-	system("pause");
+	sharpen2D(image, result);
 
-	/*VideoCapture capture(0);
-	if (!capture.isOpened())
-	{
-	return 1;
-	}
-	resultMain = process(capture);*/
+	namedWindow("Image");
+	imshow("Image", image);
 
-	//Filter 테스트
-	//resultMain = myFilter2DMain();
-	return resultMain;
+	namedWindow("Result");
+	imshow("Result", result);
+
+	cv::waitKey();
+
+	return 0;
 
 	/*HighPassFilter HighPassFilter;
 	
@@ -62,7 +57,12 @@ int main()
 	printf_s("test4:%d\n", array[0][0]);
 	system("pause");*/
 
-	
+	/*VideoCapture capture(0);
+	if (!capture.isOpened())
+	{
+		return 1;
+	}
+	result = process(capture);*/
 	
 	//Mat im = imread("./../../[00Images]/etc/lena.png", 0); //Load image in Gray Scale
 	//imshow("good?", im);
@@ -110,3 +110,34 @@ int main()
 	//return result;
 }
 
+void sharpen2D(const cv::Mat &image, cv::Mat &result) {
+	float data[] = {
+		0,-1,0,
+		-1,5,-1,
+		0,-1,0
+	};
+
+	float sobelVertical[] = {
+		-1,0,1,
+		-2,0,2,
+		-1,0,1
+	};
+
+	float sobelHorizental[] = {
+		-1,-2,-1,
+		0,0,0,
+		1,2,1
+	};
+
+	Mat kernel(3, 3, CV_32F, sobelHorizental);
+	//Mat kernel(3, 3, CV_32F, cv::Scalar(0));
+	//// 커널 생성(모든 값을 0으로 초기화)
+	//kernel.at<float>(1, 1) = 5.0; // 커널 값에 할당
+	//kernel.at<float>(0, 1) = -1.0;
+	//kernel.at<float>(2, 1) = -1.0;
+	//kernel.at<float>(1, 0) = -1.0;
+	//kernel.at<float>(1, 2) = -1.0;
+
+	cv::filter2D(image, result, image.depth(), kernel);
+	// 영상 필터링
+}

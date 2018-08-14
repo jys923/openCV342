@@ -19,7 +19,6 @@ void onTrackbar(int pos)
 		M, CV_INTER_LINEAR + CV_WARP_FILL_OUTLIERS);
 
 	//cvPolarToCart
-	//cvLinearPolar(dst, src2, cvPoint2D32f(dst->width / 2, dst->height / 2),)
 	cvLogPolar(dst, src2, cvPoint2D32f(src->width / 4, src->height / 2),
 		M, CV_INTER_LINEAR | CV_WARP_INVERSE_MAP);
 

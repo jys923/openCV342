@@ -17,8 +17,8 @@ int main()
 
 	//시프트 연산
 	int a = 6;
-	cout << "shift>>:" << (a >> 1) << endl;//03
-	cout << "shift<<:" << (a << 1) << endl;//12
+	cout << "shift>>:" << (a >> 1) << endl;
+	cout << "shift<<:" << (a << 1) << endl;
 	system("pause");
 
 	/*VideoCapture capture(0);

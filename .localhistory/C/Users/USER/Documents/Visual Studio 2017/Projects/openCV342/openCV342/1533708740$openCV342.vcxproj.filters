@@ -30,25 +30,10 @@
     <ClCompile Include="03Wavelet1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="03Wavelet2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="03Wavelet3.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="03Wavelet4.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="04HighPassFilter.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="05LowPassFilter.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="00openCV342Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="06myFilter2D.cpp">
+    <ClCompile Include="03Wavelet2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -63,15 +48,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="03Wavelet1.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="03Wavelet3.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="04HighPassFilter.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="05LowPassFilter.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

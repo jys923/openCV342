@@ -8,30 +8,13 @@ int polarTransforms(int camNumber);
 int histogram03(String filePath);
 int logPolarTest(String filePath);
 int process(VideoCapture& capture);
-void myFilter2D(const cv::Mat &image, cv::Mat &result , int filter);
-int myFilter2DMain();
 
 int main()
 {
-	int resultMain = 0;
+	int result = 1;
 
-	//시프트 연산
-	int a = 6;
-	cout << "shift>>:" << (a >> 1) << endl;//03
-	cout << "shift<<:" << (a << 1) << endl;//12
-	system("pause");
-
-	/*VideoCapture capture(0);
-	if (!capture.isOpened())
-	{
-	return 1;
-	}
-	resultMain = process(capture);*/
-
-	//Filter 테스트
-	//resultMain = myFilter2DMain();
-	return resultMain;
-
+	imshow("raw", imread("GIRL.RAW", 1));
+	waitKey();
 	/*HighPassFilter HighPassFilter;
 	
 	char in_name[100];
@@ -62,7 +45,12 @@ int main()
 	printf_s("test4:%d\n", array[0][0]);
 	system("pause");*/
 
-	
+	/*VideoCapture capture(0);
+	if (!capture.isOpened())
+	{
+		return 1;
+	}
+	result = process(capture);*/
 	
 	//Mat im = imread("./../../[00Images]/etc/lena.png", 0); //Load image in Gray Scale
 	//imshow("good?", im);
@@ -107,6 +95,5 @@ int main()
 	
 	//system("pause");
 	//waitKey();
-	//return result;
+	return result;
 }
-

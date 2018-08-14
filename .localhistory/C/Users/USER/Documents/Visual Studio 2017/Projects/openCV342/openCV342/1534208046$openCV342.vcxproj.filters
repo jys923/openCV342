@@ -48,7 +48,7 @@
     <ClCompile Include="00openCV342Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="06myFilter2D.cpp">
+    <ClCompile Include="myFilter2D.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

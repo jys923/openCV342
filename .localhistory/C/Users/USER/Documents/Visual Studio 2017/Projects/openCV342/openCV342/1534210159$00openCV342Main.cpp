@@ -15,18 +15,12 @@ int main()
 {
 	int resultMain = 0;
 
-	//시프트 연산
-	int a = 6;
-	cout << "shift>>:" << (a >> 1) << endl;//03
-	cout << "shift<<:" << (a << 1) << endl;//12
-	system("pause");
-
-	/*VideoCapture capture(0);
+	VideoCapture capture(0);
 	if (!capture.isOpened())
 	{
 	return 1;
 	}
-	resultMain = process(capture);*/
+	resultMain = process(capture);
 
 	//Filter 테스트
 	//resultMain = myFilter2DMain();

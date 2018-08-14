@@ -14,22 +14,7 @@ int myFilter2DMain();
 int main()
 {
 	int resultMain = 0;
-
-	//시프트 연산
-	int a = 6;
-	cout << "shift>>:" << (a >> 1) << endl;//03
-	cout << "shift<<:" << (a << 1) << endl;//12
-	system("pause");
-
-	/*VideoCapture capture(0);
-	if (!capture.isOpened())
-	{
-	return 1;
-	}
-	resultMain = process(capture);*/
-
-	//Filter 테스트
-	//resultMain = myFilter2DMain();
+	resultMain = myFilter2DMain();
 	return resultMain;
 
 	/*HighPassFilter HighPassFilter;
@@ -62,7 +47,12 @@ int main()
 	printf_s("test4:%d\n", array[0][0]);
 	system("pause");*/
 
-	
+	/*VideoCapture capture(0);
+	if (!capture.isOpened())
+	{
+		return 1;
+	}
+	result = process(capture);*/
 	
 	//Mat im = imread("./../../[00Images]/etc/lena.png", 0); //Load image in Gray Scale
 	//imshow("good?", im);

@@ -119,7 +119,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="00openCV342Main.cpp" />
     <ClCompile Include="01polar_transforms.cpp" />
     <ClCompile Include="02cvLogPolar.cpp" />
     <ClCompile Include="03Wavelet1.cpp" />
@@ -129,7 +128,6 @@
     <ClCompile Include="09Histogram03.cpp" />
     <ClCompile Include="04HighPassFilter.cpp" />
     <ClCompile Include="05LowPassFilter.cpp" />
-    <ClCompile Include="06myFilter2D.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>

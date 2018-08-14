@@ -129,7 +129,7 @@
     <ClCompile Include="09Histogram03.cpp" />
     <ClCompile Include="04HighPassFilter.cpp" />
     <ClCompile Include="05LowPassFilter.cpp" />
-    <ClCompile Include="06myFilter2D.cpp" />
+    <ClCompile Include="myFilter2D.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
