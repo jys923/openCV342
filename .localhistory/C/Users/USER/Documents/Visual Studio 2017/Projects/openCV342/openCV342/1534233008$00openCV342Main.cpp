@@ -5,33 +5,20 @@
 #include "05LowPassFilter.h"
 
 int polarTransforms(int camNumber);
-
 int histogram03(String filePath);
 int logPolarTest(String filePath);
 int process(VideoCapture& capture);
 //void myFilter2D(const cv::Mat &image, cv::Mat &result , int filter);
 int myFilter2DMain();
-int cntPixel(cv::Mat &image, cv::Rect rect, int min, int max);
-int GetIrisData(cv::Mat &image, cv::Mat &dest);
+int cntWhitePixel(cv::Mat &image,Rect rect,int min,int max);
+int polarTransforms(int camNumber);
 
 int main()
 {
 	int resultMain = 0;
-	//resultMain = polarTransforms(0);
-	Mat src, lin_polar_img, log_polar_img;
-	src = imread("./../../[00Images]/etc/small_planet_002.JPG", IMREAD_GRAYSCALE);
-	Point2f center((float)src.cols / 2, (float)src.rows / 2);
-	double M = (float)src.rows / 2;
-	//double M = 70;
-	logPolar(src, log_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
-	linearPolar(src, lin_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
-	imshow("src", src);
-	imshow("log_polar_img", log_polar_img);
-	imshow("lin_polar_img", lin_polar_img);
-	waitKey();
-
+	int polarTransforms(0);
 	//Mat src = imread("./../../[00Images]/etc/lena.png", IMREAD_GRAYSCALE);
-	//int cntW = cntPixel(src, Rect(15, 20, 140, 150), 0, 150);
+	//int cntW = cntWhitePixel(src, Rect(15, 20, 140, 150), 0, 150);
 	//cout << "cntW:" << cntW << endl;//03
 
 	////시프트 연산
@@ -128,8 +115,8 @@ int main()
 	//waitKey();
 	//return result;
 }
-//min~max 사이면 255 아니면 0 //사이 픽셀수 출력
-int cntPixel(cv::Mat &image, Rect rect, int min, int max)
+//min~max 사이면 255 아니면 0
+int cntWhitePixel(cv::Mat &image, Rect rect, int min, int max)
 {
 	Mat src = image;
 	Mat RIO = src(rect);
@@ -150,12 +137,4 @@ int cntPixel(cv::Mat &image, Rect rect, int min, int max)
 	//RIO 해제
 	
 	return cntWhitePixel;
-}
-
-int GetIrisData(cv::Mat &image, cv::Mat &dest)
-{
-	Mat src, dest;
-	Point2f center((float)src.cols / 2, (float)src.rows / 2);
-	src = image;
-
 }

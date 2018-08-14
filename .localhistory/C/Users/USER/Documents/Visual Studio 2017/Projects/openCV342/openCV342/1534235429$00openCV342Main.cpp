@@ -11,15 +11,14 @@ int logPolarTest(String filePath);
 int process(VideoCapture& capture);
 //void myFilter2D(const cv::Mat &image, cv::Mat &result , int filter);
 int myFilter2DMain();
-int cntPixel(cv::Mat &image, cv::Rect rect, int min, int max);
-int GetIrisData(cv::Mat &image, cv::Mat &dest);
+int cntPixel(cv::Mat &image, Rect rect, int min, int max);
 
 int main()
 {
 	int resultMain = 0;
 	//resultMain = polarTransforms(0);
 	Mat src, lin_polar_img, log_polar_img;
-	src = imread("./../../[00Images]/etc/small_planet_002.JPG", IMREAD_GRAYSCALE);
+	src = imread("./../../[00Images]/etc/visualcone_stereographic.png", IMREAD_GRAYSCALE);
 	Point2f center((float)src.cols / 2, (float)src.rows / 2);
 	double M = (float)src.rows / 2;
 	//double M = 70;
@@ -150,12 +149,4 @@ int cntPixel(cv::Mat &image, Rect rect, int min, int max)
 	//RIO «ÿ¡¶
 	
 	return cntWhitePixel;
-}
-
-int GetIrisData(cv::Mat &image, cv::Mat &dest)
-{
-	Mat src, dest;
-	Point2f center((float)src.cols / 2, (float)src.rows / 2);
-	src = image;
-
 }
