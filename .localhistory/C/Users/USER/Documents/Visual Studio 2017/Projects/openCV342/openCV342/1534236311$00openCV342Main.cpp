@@ -11,26 +11,23 @@ int logPolarTest(String filePath);
 int process(VideoCapture& capture);
 //void myFilter2D(const cv::Mat &image, cv::Mat &result , int filter);
 int myFilter2DMain();
-int cntPixel(cv::Mat &image, cv::Rect rect, int min, int max);
-int GetIrisData(cv::Mat &image, cv::Mat &dest);
+int cntPixel(cv::Mat &image, Rect rect, int min, int max);
 
 int main()
 {
 	int resultMain = 0;
-
-
 	//resultMain = polarTransforms(0);
-	//Mat src, lin_polar_img, log_polar_img;
-	//src = imread("./../../[00Images]/etc/visualcone_stereographic2.png", IMREAD_GRAYSCALE);
-	//Point2f center((float)src.cols / 2, (float)src.rows / 2);
-	//double M = (float)src.rows / 2;
-	////double M = 70;
-	//logPolar(src, log_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
-	//linearPolar(src, lin_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
-	//imshow("src", src);
-	//imshow("log_polar_img", log_polar_img);
-	//imshow("lin_polar_img", lin_polar_img);
-	//waitKey();
+	Mat src, lin_polar_img, log_polar_img;
+	src = imread("./../../[00Images]/etc/small_planet_002.JPG", IMREAD_GRAYSCALE);
+	Point2f center((float)src.cols / 2, (float)src.rows / 2);
+	double M = (float)src.rows / 2;
+	//double M = 70;
+	logPolar(src, log_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
+	linearPolar(src, lin_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
+	imshow("src", src);
+	imshow("log_polar_img", log_polar_img);
+	imshow("lin_polar_img", lin_polar_img);
+	waitKey();
 
 	//Mat src = imread("./../../[00Images]/etc/lena.png", IMREAD_GRAYSCALE);
 	//int cntW = cntPixel(src, Rect(15, 20, 140, 150), 0, 150);
@@ -129,4 +126,27 @@ int main()
 	//system("pause");
 	//waitKey();
 	//return result;
+}
+//min~max 사이면 255 아니면 0 //사이 픽셀수 출력
+int cntPixel(cv::Mat &image, Rect rect, int min, int max)
+{
+	Mat src = image;
+	Mat RIO = src(rect);
+	imshow("RIO", RIO);
+	Mat result;
+	int cntWhitePixel, cntTotalPixel, cntBlackPixel;
+	cntTotalPixel = rect.width * rect.height;
+	inRange(RIO, min, max, result);
+	rectangle(src,  Point(rect.x, rect.y), Point(rect.x+rect.width, rect.y + rect.height), Scalar(0, 0, 255), 2);
+	imshow("src", src);
+	imshow("result", result);
+	
+	cntBlackPixel = countNonZero(result);
+	cntWhitePixel = cntTotalPixel - cntBlackPixel;
+	cout << "total:"<< rect.width * rect.height << endl;//03
+	cout << "cntW:" << cntWhitePixel << endl;//03
+	waitKey();
+	//RIO 해제
+	
+	return cntWhitePixel;
 }

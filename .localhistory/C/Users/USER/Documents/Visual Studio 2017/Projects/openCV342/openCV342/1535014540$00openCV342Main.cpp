@@ -17,20 +17,18 @@ int GetIrisData(cv::Mat &image, cv::Mat &dest);
 int main()
 {
 	int resultMain = 0;
-
-
 	//resultMain = polarTransforms(0);
-	//Mat src, lin_polar_img, log_polar_img;
-	//src = imread("./../../[00Images]/etc/visualcone_stereographic2.png", IMREAD_GRAYSCALE);
-	//Point2f center((float)src.cols / 2, (float)src.rows / 2);
-	//double M = (float)src.rows / 2;
-	////double M = 70;
-	//logPolar(src, log_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
-	//linearPolar(src, lin_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
-	//imshow("src", src);
-	//imshow("log_polar_img", log_polar_img);
-	//imshow("lin_polar_img", lin_polar_img);
-	//waitKey();
+	Mat src, lin_polar_img, log_polar_img;
+	src = imread("./../../[00Images]/etc/visualcone_stereographic2.png", IMREAD_GRAYSCALE);
+	Point2f center((float)src.cols / 2, (float)src.rows / 2);
+	double M = (float)src.rows / 2;
+	//double M = 70;
+	logPolar(src, log_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
+	linearPolar(src, lin_polar_img, center, M, INTER_LINEAR + WARP_FILL_OUTLIERS);
+	imshow("src", src);
+	imshow("log_polar_img", log_polar_img);
+	imshow("lin_polar_img", lin_polar_img);
+	waitKey();
 
 	//Mat src = imread("./../../[00Images]/etc/lena.png", IMREAD_GRAYSCALE);
 	//int cntW = cntPixel(src, Rect(15, 20, 140, 150), 0, 150);

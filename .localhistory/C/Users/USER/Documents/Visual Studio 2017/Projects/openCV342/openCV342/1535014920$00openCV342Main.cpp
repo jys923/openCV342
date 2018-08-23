@@ -17,8 +17,6 @@ int GetIrisData(cv::Mat &image, cv::Mat &dest);
 int main()
 {
 	int resultMain = 0;
-
-
 	//resultMain = polarTransforms(0);
 	//Mat src, lin_polar_img, log_polar_img;
 	//src = imread("./../../[00Images]/etc/visualcone_stereographic2.png", IMREAD_GRAYSCALE);
@@ -32,9 +30,9 @@ int main()
 	//imshow("lin_polar_img", lin_polar_img);
 	//waitKey();
 
-	//Mat src = imread("./../../[00Images]/etc/lena.png", IMREAD_GRAYSCALE);
-	//int cntW = cntPixel(src, Rect(15, 20, 140, 150), 0, 150);
-	//cout << "cntW:" << cntW << endl;//03
+	Mat src = imread("./../../[00Images]/etc/lena.png", IMREAD_GRAYSCALE);
+	int cntW = cntPixel(src, Rect(15, 20, 140, 150), 0, 150);
+	cout << "cntW:" << cntW << endl;//03
 
 	////시프트 연산
 	//int a = 6;

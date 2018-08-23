@@ -120,7 +120,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="00openCV342Main.cpp" />
-    <ClCompile Include="00UtilTest.cpp" />
     <ClCompile Include="01polar_transforms.cpp" />
     <ClCompile Include="02cvLogPolar.cpp" />
     <ClCompile Include="03Wavelet1.cpp" />
