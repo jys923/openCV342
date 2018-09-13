@@ -4,7 +4,8 @@ void myFilter2D(const cv::Mat &image, cv::Mat &result, int filter);
 
 int myFilter2DMain()
 {
-	Mat image = cv::imread("./../../[00Images]/etc/waveletTest.png", IMREAD_GRAYSCALE);
+	Mat image = cv::imread("./../../[00Images]/eyes/libs/(12).bmp", IMREAD_GRAYSCALE);
+	
 	Mat result;
 
 	namedWindow("Image");

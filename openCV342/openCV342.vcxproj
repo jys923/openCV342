@@ -71,7 +71,12 @@
     <Import Project="openCV342Release.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\openCV342\sources\3rdparty\libjasper;C:\openCV342\build\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\openCV342\sources\3rdparty\libjasper;C:\openCV342\build\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -127,10 +132,12 @@
     <ClCompile Include="03Wavelet2.cpp" />
     <ClCompile Include="03Wavelet3.c" />
     <ClCompile Include="03Wavelet4.cpp" />
+    <ClCompile Include="07Kind7.cpp" />
     <ClCompile Include="09Histogram03.cpp" />
     <ClCompile Include="04HighPassFilter.cpp" />
     <ClCompile Include="05LowPassFilter.cpp" />
     <ClCompile Include="06myFilter2D.cpp" />
+    <ClCompile Include="07kind72.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>

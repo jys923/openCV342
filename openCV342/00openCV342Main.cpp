@@ -3,6 +3,8 @@
 #include "03Wavelet3.h"
 #include "04HighPassFilter.h"
 #include "05LowPassFilter.h"
+//#include <jasper\jasper.h>
+#include "opencv2/imgcodecs.hpp"
 
 int polarTransforms(int camNumber);
 
@@ -13,12 +15,75 @@ int process(VideoCapture& capture);
 int myFilter2DMain();
 int cntPixel(cv::Mat &image, cv::Rect rect, int min, int max);
 int GetIrisData(cv::Mat &image, cv::Mat &dest);
+void Sweap(int &a, int &b);
+void Sweap2(int &a, int &b);
+int FindPolygon();
+int testUpperLib();
+int testLib2();
+
+void Sweap2(int *a, int *b) {
+	int tmp;
+	tmp = *a;
+	cout << "sweap2:tmp" << tmp << endl;
+	*a = *b;
+	*b = tmp;
+}
+
+void Sweap(int &a, int &b) {
+	int tmp = 0;
+	tmp = a;
+	cout << "sweap:tmp" << tmp << endl;
+	a = b;
+	b = tmp;
+}
 
 int main()
 {
 	int resultMain = 0;
 
+	//Mat src, src2;
+	//src = imread("./../../[00Images]/etc/test.bmp");
+	//imshow("test.jp2", src);
+	//imwrite("./../../[00Images]/etc/test.jp2", src);
+	
+	//FindPolygon();
+	//testUpperLib();
+	testLib2();
+	//myFilter2DMain();
+//	int a = 1;
+//	int b = 2;
+//
+//	cout << "out a:" << a << "out b:" << b << endl;
+//
+//	Sweap(a, b);
+//
+//	cout << "out a:" << a << "out b:" << b << endl;
+//
+//	int *a2; a2 = &a;
+//	int *b2; b2 = &b;
+//
+//	cout << "out2 a:" << *a2 << "out b:" << *b2 << endl;
+//
+//	Sweap2(a2, b2);
+//
+//	cout << "out2 a:" << *a2 << "out b:" << *b2 << endl;
+//
+//	Mat src, src2;
+//	//src = imread("./../../[00Images]/etc/relax.jp2", IMREAD_ANYDEPTH | IMREAD_ANYCOLOR);
+//	//src = imread("./../../[00Images]/etc/example.jp2", IMREAD_ANYDEPTH | IMREAD_ANYCOLOR);
+//	src = imread("./../../[00Images]/etc/example.jp2", IMREAD_COLOR);
+////	jp2_encode
+//	
+//
+//	imshow("jp2", src);
 
+	/*vector<int> compression_params;
+	compression_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
+	compression_params.push_back(9);
+	imwrite("./../../[00Images]/etc/harris.jp2", , src, compression_params);*/
+
+	waitKey();
+	return resultMain;
 	//resultMain = polarTransforms(0);
 	//Mat src, lin_polar_img, log_polar_img;
 	//src = imread("./../../[00Images]/etc/visualcone_stereographic2.png", IMREAD_GRAYSCALE);
@@ -51,7 +116,7 @@ int main()
 
 	//Filter Å×½ºÆ®
 	//resultMain = myFilter2DMain();
-	return resultMain;
+	//return resultMain;
 
 	/*HighPassFilter HighPassFilter;
 	

@@ -38,5 +38,6 @@ private:
 	int num;
 public:
 	void fun1(int a) {
+
 	};
 };
