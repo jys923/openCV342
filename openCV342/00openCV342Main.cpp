@@ -20,6 +20,7 @@ void Sweap2(int &a, int &b);
 int FindPolygon();
 int testUpperLib();
 int testLib2();
+int testFilter00();
 
 void Sweap2(int *a, int *b) {
 	int tmp;
@@ -37,6 +38,10 @@ void Sweap(int &a, int &b) {
 	b = tmp;
 }
 
+int testContours();
+
+bool lineIntersection(cv::Point2f &c1, cv::Point2f &c2, cv::Point2f &d1, cv::Point2f &d2, cv::Point2f &intersection);
+
 int main()
 {
 	int resultMain = 0;
@@ -45,11 +50,14 @@ int main()
 	//src = imread("./../../[00Images]/etc/test.bmp");
 	//imshow("test.jp2", src);
 	//imwrite("./../../[00Images]/etc/test.jp2", src);
-	
-	//FindPolygon();
+	//testFilter00();
 	//testUpperLib();
 	testLib2();
+	//FindPolygon();
+	//testContours();
 	//myFilter2DMain();
+
+	//lineIntersection();
 //	int a = 1;
 //	int b = 2;
 //

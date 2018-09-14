@@ -133,6 +133,7 @@
     <ClCompile Include="03Wavelet3.c" />
     <ClCompile Include="03Wavelet4.cpp" />
     <ClCompile Include="07Kind7.cpp" />
+    <ClCompile Include="08Filter.cpp" />
     <ClCompile Include="09Histogram03.cpp" />
     <ClCompile Include="04HighPassFilter.cpp" />
     <ClCompile Include="05LowPassFilter.cpp" />
